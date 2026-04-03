@@ -1,0 +1,40 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    /* Garante que o body ocupe a tela toda */
+}
+
+body:has(#botao:hover) {
+    background-color: blue;
+    transition: background-color 5s ease;
+}
+
+h1 {
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 100%;
+}
+
+.texto{
+    color:black;
+    transition: 2s;
+}
+
+#botao:hover + .texto{
+    color:white;
+    background-color: black;
+}
+
+#botao {
+    text-align: center;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    padding: 30px;
+    font-size: 20px;
+    cursor: grab;
+}

@@ -1,0 +1,36 @@
+.macaco {
+    text-align: center;
+}
+
+#Livro {
+    margin: 0px;
+    font-size: 60px;
+}
+
+.tite {
+    background-color: lightblue;
+    text-align: center;
+}
+
+body {
+    background-color: rgb(229, 170, 235)
+}
+
+body:hover{
+    background-color: rgb(208, 92, 221);
+    transition: background-color 1s ease;
+}
+
+body:has(.tite:hover, .pa:hover){
+    background-color: rgb(229, 170, 235)
+}
+
+.aulas {
+    color: blue;
+}
+
+.cont {
+    background-color: lightyellow;
+    display: inline;
+    padding: 0em -10em;
+}
