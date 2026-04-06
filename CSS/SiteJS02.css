@@ -75,6 +75,7 @@ button {
     border-radius: 15px;
     margin-bottom: 1em;
     margin-top: 1em;
+    cursor:pointer;
 }
 
 #current-progress {

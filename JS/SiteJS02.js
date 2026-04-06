@@ -2,9 +2,14 @@ const songName = document.getElementById("song-name");
 const artistName = document.getElementById("artist-name");
 const song = document.getElementById("audio");
 const play = document.getElementById("play");
+const currentProgress = document.getElementById("current-progress");
+const progressCounter = document.getElementById("progress-counter");
+const currentProgressCounter = document.getElementById("current-progress-counter");
+const progressBar = document.getElementById("progress-bar");
 
 songName.innerText = "In Da Club";
 artistName.innerText = "50 Cent";
+currentProgress.style.width = "0%";
 
 let isPlaying = false;
 
@@ -32,3 +37,41 @@ function playPauseDecider(){
 }
 
 play.addEventListener('click', playPauseDecider);
+
+song.addEventListener('timeupdate',() => {
+    const percentage = (song.currentTime / song.duration ) * 100;
+    currentProgress.style.width = percentage + "%";
+})
+
+progressBar.addEventListener('click', (e) => {
+
+    const larguraTotal = progressBar.clientWidth;
+
+    const cliqueX = e.offsetX;
+
+    const duracaoTotal = song.duration;
+
+    const novoTempo = (cliqueX / larguraTotal) * duracaoTotal;
+
+    song.currentTime = novoTempo;
+});
+
+song.addEventListener('loadedmetadata', () => {
+    progressCounter.textContent = Math.floor(song.duration) + "s";
+});
+
+song.addEventListener('timeupdate', () => {
+    currentProgressCounter.textContent = Math.floor(song.currentTime) + "s";
+});
+
+/*
+
+Sinceramente, ñ sei oq tem de errado:
+
+song.addEventListener('timeupdate', () => {
+    if (song.currentTime === 100%) {
+        song.currenTime = 0%;
+    }
+});
+
+*/
