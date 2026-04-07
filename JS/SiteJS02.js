@@ -6,6 +6,8 @@ const currentProgress = document.getElementById("current-progress");
 const progressCounter = document.getElementById("progress-counter");
 const currentProgressCounter = document.getElementById("current-progress-counter");
 const progressBar = document.getElementById("progress-bar");
+const previous = document.getElementById("previous");
+const next = document.getElementById("next");
 
 songName.innerText = "In Da Club";
 artistName.innerText = "50 Cent";
@@ -63,15 +65,3 @@ song.addEventListener('loadedmetadata', () => {
 song.addEventListener('timeupdate', () => {
     currentProgressCounter.textContent = Math.floor(song.currentTime) + "s";
 });
-
-/*
-
-Sinceramente, ñ sei oq tem de errado:
-
-song.addEventListener('timeupdate', () => {
-    if (song.currentTime === 100%) {
-        song.currenTime = 0%;
-    }
-});
-
-*/
